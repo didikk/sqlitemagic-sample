@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="me.didik.sqlitemagic">
+
+    <application
+        android:name="me.didik.sqlitemagic.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="me.didik.sqlitemagic.MainActivity"
+            android:label="Books">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="me.didik.sqlitemagic.AddBookActivity"
+            android:label="Add Book">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.didik.sqlitemagic.MainActivity"/>
+        </activity>
+    </application>
+
+</manifest>

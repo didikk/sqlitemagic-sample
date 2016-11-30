@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SqliteMagic</string>
+    <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="published">Published</string>
+    <string name="author_first_name">Author First Name</string>
+    <string name="author_last_name">Author Last Name</string>
+</resources>
