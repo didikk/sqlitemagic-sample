@@ -1,0 +1,2 @@
+# sqlitemagic-sample
+SqliteMagic Sample
