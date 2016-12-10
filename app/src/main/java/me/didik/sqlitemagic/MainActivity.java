@@ -11,20 +11,24 @@ import android.view.View;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.didik.sqlitemagic.model.Book;
 import me.didik.sqlitemagic.recycler.RecyclerTouchListener;
 import me.didik.sqlitemagic.recycler.SpacesItemDecoration;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
+
+    @BindView(R.id.recycler_view) RecyclerView recyclerView;
     private BookAdapter adapter;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        unbinder = ButterKnife.bind(this);
 
         initRecycler();
     }
@@ -80,8 +84,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
+    protected void onResume() {
+        super.onResume();
         adapter.updateList(Book.get());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }
